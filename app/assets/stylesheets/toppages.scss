@@ -1,0 +1,45 @@
+// Place all the styles related to the toppages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.text-image {
+  position: relative;
+  width: 900px;
+  
+}
+
+.text-image img {
+  width: 100%;
+}
+
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  color: #ffffff;
+}
+
+.text {
+  position: absolute;
+  font-size: 15px;
+  top: 40%;
+  left: 30%;
+  color: #ffffff;
+}
+
+.button {
+  position: absolute;
+  font-size: 15px;
+  top: 135%;
+  left: 39%;
+}
+
+
+
+
+
+
+
+
+
+
