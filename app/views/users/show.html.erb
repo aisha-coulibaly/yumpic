@@ -1,8 +1,12 @@
-<div class="text-center row">
-    <div class="card">
-      <div class="card-body">
-        <img class="rounded img-fluid" src="<%= @user.image %>">
-        <h3 class="text-center"><%= @user.name %></h3>
+<div class="text-center">
+
+        <img class="rounded img-fluid">
+        <% if @user.image? %>
+            <%= image_tag @user.image.thumb.url %>
+          <% else %>
+            <%= image_tag("/assets/icon/no-image.png") %>
+          <% end %>
+        <h3 class="text-center"><%= current_user.name %></h3>
       </div>
         <div class="section1 text-center">
       <button type="button" class="btn btn-outline-dark">follow</button>

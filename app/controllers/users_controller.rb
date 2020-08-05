@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :update]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
     if current_user == @user
       if @user.update(user_params)
         flash[:success] = 'ユーザー情報を編集しました。'
-        redirect_to @user
+       redirect_to :edit_url
       else
         flash.now[:danger]
         render :edit
@@ -44,7 +45,8 @@ class UsersController < ApplicationController
     end
   end
   
-  private
+private
+
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
   end

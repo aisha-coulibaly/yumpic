@@ -13,7 +13,7 @@
 
     <div class="form-group">
       <% if @user.image? %>
-        <%= image_tag @user.image.url %>
+        <%= image_tag @user.image.thumb.url %>
       <% else %>
         <%= image_tag("/assets/icon/no-image.png") %>
       <% end %>
