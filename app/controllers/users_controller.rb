@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :edit, :update]
+  before_action :require_user_logged_in, only: [:edit, :update]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
   end
 
   def show
+    @posts = Post.all
     @user = User.find(params[:id])
+    @user.posts.order(id: :desc).page(params[:page])
   end
 
   def new
@@ -35,7 +37,7 @@ class UsersController < ApplicationController
     if current_user == @user
       if @user.update(user_params)
         flash[:success] = 'ユーザー情報を編集しました。'
-       redirect_to :edit_url
+       redirect_to :edit_user
       else
         flash.now[:danger]
         render :edit
