@@ -1,3 +1,7 @@
+<% if logged_in? %>
+
+<% else %>
+
 <div class="text-image">
   <img src="/assets/topimage.jpg">
     <div class="logo">
@@ -15,5 +19,6 @@
       </div>
     </div>
 </div>
+<% end %>
 
 <%= render 'posts/posts', posts: @posts %>
