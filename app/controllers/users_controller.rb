@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:edit, :update]
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :followings, :followers]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
   end
 
   def show
-    @posts = Post.all
     @user = User.find(params[:id])
+    @posts = Post.all
     @user.posts.order(id: :desc).page(params[:page])
   end
 
@@ -46,6 +46,17 @@ class UsersController < ApplicationController
       redirect_to root_url
     end
   end
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+  end
+  
   
 private
 
