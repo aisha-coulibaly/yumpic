@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  get 'favorite/create'
+  get 'favorite/destroy'
   get 'relationships/create'
   get 'relationships/destroy'
   get 'posts/create'
@@ -16,10 +18,11 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create, :edit] do
+  resources :users, only: [:index, :show, :new, :create, :edit, :update] do
     member do
       get :followings
       get :followers
+      get :likes
     end
   end
   
@@ -28,6 +31,7 @@ Rails.application.routes.draw do
   post "posts/create" => "posts#create"
   
   resources :relationships, only: [:create, :destroy]
-  
+  resources :fvorites, only: [:create, :destroy]
+  resources :users
   
 end
