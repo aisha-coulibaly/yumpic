@@ -6,7 +6,6 @@ class PostsController < ApplicationController
     @posts = Post.order(id: :desc).page(params[:page]).per(20)
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}")
-      @favorite_count = Favorite.where(post_id: @post.id).count
     end
   end
 
