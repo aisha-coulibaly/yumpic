@@ -3,12 +3,17 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.order(id: :desc).page(params[:page]).per(20)
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}")
+      @favorite_count = Favorite.where(post_id: @post.id).count
+    end
   end
 
   def show
     @posts = Post.all
-  　@post = Post.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
+    @favorite_count = Favorite.where(post_id: @post.id).count
   end
 
   
@@ -33,11 +38,12 @@ class PostsController < ApplicationController
     flash[:success] = '写真を削除しました。'
     redirect_back(fallback_location: root_path)
   end
+
   
   
   private
   def post_params
-    params.require(:post).permit(:image)
+    params.require(:post).permit(:image, :tag_list, :url)
   end
   
   def correct_user

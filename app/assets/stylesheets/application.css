@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+.footer {
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+}
+
+.content {
+  min-height: 700px;
+}
+
+button{
+  background: none;
+}
+
+.favorite_count{
+  float: left;
+}
+
+.favorite{
+  overflow: hidden;
+}

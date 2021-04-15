@@ -1,0 +1,21 @@
+<br>
+<div class="text-center">
+
+<%= image_tag @post.image.url(:img) if @post.image.present? %><br>
+         <div class="d-flex justify-content-center flex-row bd-highlight mb-3">
+           　　<div class="p-2 bd-highlight"><%= @post.created_at.to_s(:datetime_jp) %></div>
+              <div class="p-2 bd-highlight"><%= render "favorite/favorite_button", post: @post %></div>
+           </div>
+       
+          <%= render 'posts/tag_list', tag_list: @post.tag_list %>
+          
+          <% if current_user == @post.user %>
+            <%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %><br>
+          
+              <%= text_url_to_link(h(@post.url)).html_safe %>
+         
+          
+          
+          
+   </div>

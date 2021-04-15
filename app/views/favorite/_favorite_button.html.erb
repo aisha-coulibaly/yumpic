@@ -1,11 +1,21 @@
+<% if logged_in? %>
 <% if current_user.likes?(post) %>
     <%= form_with(model: current_user.favorites.find_by(post_id: post.id), local: true, method: :delete) do |f| %>
       <%= hidden_field_tag :post_id, post.id %>
-      <%= f.submit 'Unlike', class: 'btn btn-dark btn-sm-block' %>
+      <%= f.button :type => "submit", style: 'border-style: none;' do %>
+   <i class="fas fa-heart"></i><%= @favorite_count %>
+    <% end %>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.favorites.build) do |f| %>
       <%= hidden_field_tag :post_id, post.id %>
-      <%= f.submit 'Like', class: 'btn btn-warning btn-sm-block' %>
+      <%= f.button :type => "submit", style: 'border-style: none;' do %>
+   <i class="far fa-heart"></i><%= @favorite_count %>
     <% end %>
+    <% end %>
+    
+    
+<% end %>
+<% else %>
+<i class="far fa-heart"></i><%= @favorite_count %>
 <% end %>

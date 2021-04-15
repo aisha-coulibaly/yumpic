@@ -1,29 +1,30 @@
-<ul class="list-unstyled">
-  <% posts.each do |post| %>
-    <li class="media mb-3">
-      <div class="media-body">
-        <img class="mr-2 rounded" src="" alt="">
-        <div>
-          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
-        </div>
-        <div>
-          <p><%= image_tag post.image.url %></p>
-        </div>
-        <div>
+<br><br>
+<div class="container">
+  <div class="row">
+
+    <% posts.each do |post| %>
+          <div class="col-md-4">
+          <!--%= link_to post.user.name, user_path(post.user) %><br-->
+          
+          <%= link_to image_tag(post.image.url(:content)), post_path(post) if post.image.present? %><br>
+         
+       
+          <%= render 'posts/tag_list', tag_list: post.tag_list %>
+          
+          
+         
           <% if current_user == post.user %>
-            <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to "×", post, method: :delete, data: { confirm: "本当に削除しますか?" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
+          
+          <%= render "favorite/favorite_button", post: post %>
+         
+          
         </div>
-        <% if logged_in? %>
-        <%= render "favorite/favorite_button", post: post %>
-        <% else %>
-        <% end %>
-      </div>
-    </li>
   <% end %>
-</ul>
-
-
-
+  
+   </div>
+  
+  </div>
 
 

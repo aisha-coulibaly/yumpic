@@ -1,19 +1,30 @@
 <div class="text-center">
-
+    <br><br>
         <img class="rounded img-fluid">
         <% if @user.image? %>
-            <%= image_tag @user.image.url %>
+            <%= image_tag @user.image.url(:thumb) if @user.image.present? %>
           <% else %>
             <%= image_tag("/assets/icon/no-image.png") %>
           <% end %>
-        <h3 class="text-center"><%= @user.name %></h3>
+          <br>
+          <div class="d-flex justify-content-center flex-row bd-highlight mb-3">
+              <div class="p-2 bd-highlight"><h3><%= @user.name %></h3></div>
+              <div class="p-2 bd-highlight"><%= render 'relationships/follow_button', user: @user %><br></div>
+          </div>
+          
+          
+        
+        
       </div>
       
       <div class="section1 text-center">
-        <%= render 'relationships/follow_button', user: @user %>
-        <button type="button" class="btn btn-outline-dark"><%= link_to 'following', followings_user_path %></button>
-        <button type="button" class="btn btn-outline-dark"><%= link_to 'following', followings_user_path %></button>
-      </div>
-    </div>
+          <div class="offset-2 col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings  <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+      <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
+    </ul>
+        
+    </div><br>
 </div>
+
  <%= render 'posts/posts', posts: @user.posts %>

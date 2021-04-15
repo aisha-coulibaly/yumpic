@@ -27,11 +27,14 @@ Rails.application.routes.draw do
   end
   
   resources :posts
+  get "posts/search" => "posts#search"
+  post "posts/search" => "posts#search"
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
   
   resources :relationships, only: [:create, :destroy]
-  resources :fvorites, only: [:create, :destroy]
-  resources :users
+  resources :favorites, only: [:create, :destroy]
+  
+  
   
 end
