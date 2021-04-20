@@ -2,23 +2,25 @@
 <%= render 'posts/posts', posts: @posts %>
 
 <% else %>
-
 <div class="text-image">
   <img src="/assets/topimage.jpg">
     <div class="logo">
       <img src="/assets/logo.png">
     </div>
-    <div class="text text-center">
-      <h2>おいしかった！を記録しよう！</h2>
-        <p>お家で作ったレシピやおいしかったお店を</p>
-        <p>写真とともに記録できるサイトです。</p>
-      <div class="button">
-        <%= link_to 'はじめる？', signup_path, class: 'btn btn-dark' %>
-        <p>or</p>
-        <%= link_to 'ログイン', login_path, class: 'btn btn-dark' %>
+    <div class="text">
+      <h3>おいしかった！を記録しよう！</h3>
+        <p>お家で作ったレシピやおいしかったお店を<br>
+        写真とともに記録できるサイトです。</p>
+      <div class='button btn-toolbar btn-sm' role="toolbar">
+            <div>
+                <%= link_to 'はじめる？', signup_path, class: 'btn btn-dark btn-sm' %>
+                or
+                <%= link_to 'ログイン', login_path, class: 'btn btn-dark btn-sm' %>
+            </div>
+        </div>
       </div>
     </div>
-</div>
+
 <%= render 'posts/posts', posts: @posts %>
 <% end %>
 

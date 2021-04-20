@@ -1,29 +1,46 @@
 // Place all the styles related to the toppages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.text-image {
+
+@media screen and (max-width:484px){
+  .text-image {
   position: relative;
   width: 1000px;
+  max-width: 100%
+  
+  
   
 }
 
+
 .text-image img {
   width: 100%;
+  max-width: 100%
 }
 
+
+
+
 .logo {
-  width: 200px;
+  width: 20%;
   position: absolute;
-  top: 10%;
-  left: 40%;
+  top: 5%;
+  left: 20%;
   color: #ffffff;
+}
+
+.text h3 {
+  font-size: 15px;
+}
+
+.text p {
+  font-size: 10px;
 }
 
 .text {
   position: absolute;
-  font-size: 15px;
   top: 35%;
-  left: 30%;
+  left: 20%;
   color: #ffffff;
 }
 
@@ -31,7 +48,51 @@
   position: absolute;
   font-size: 15px;
   top: 100%;
-  left: 35%;
+  left: 0%;
+}
+
+
+}
+
+
+.text-image {
+  position: relative;
+  width: 1000px;
+  max-width: 100%
+  
+  
+}
+
+
+.text-image img {
+  width: 100%;
+  max-width: 100%
+}
+
+
+
+
+.logo {
+  width: 20%;
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  color: #ffffff;
+}
+
+.text {
+  position: absolute;
+  font-size: 15px;
+  top: 35%;
+  left: 20%;
+  color: #ffffff;
+}
+
+.button {
+  position: absolute;
+  font-size: 15px;
+  top: 100%;
+  left: 0%;
 }
 
 
