@@ -58,4 +58,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
 gem 'acts-as-taggable-on', '~> 6.0'
-gem "aws-sdk-s3", require: false
+gem 'fog-aws'
