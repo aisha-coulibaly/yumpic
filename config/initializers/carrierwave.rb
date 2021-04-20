@@ -7,7 +7,7 @@ unless Rails.env.development? || Rails.env.test?
       region: 'ap-northeast-1'
     }
 
-    config.fog_directory  = 'rails-photo-123'
+    config.fog_directory  = 'krcn-awsbucket'
     config.cache_storage = :fog
   end
 end
