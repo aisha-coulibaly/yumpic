@@ -34,3 +34,7 @@ button{
 .favorite{
   overflow: hidden;
 }
+
+body{ 
+  padding-top: 40px; 
+}

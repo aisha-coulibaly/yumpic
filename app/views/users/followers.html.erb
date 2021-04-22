@@ -1,9 +1,8 @@
 <br>
-  <div class="offset-2 col-sm-8　text-center">
+  <div class="offset-md-2 col-sm-6 text-center">
     <ul class="nav nav-tabs nav-justified mb-3">
       <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings</a></li>
       <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers</a></li>
     </ul>
     <%= render 'users', users: @followers %>
   </div>
-  

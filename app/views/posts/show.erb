@@ -1,6 +1,6 @@
 <br>
 <div class="text-center">
-
+<%= link_to @post.user.name, user_path(@post.user) %><br>
 <%= image_tag @post.image.url(:img) if @post.image.present? %><br>
          <div class="d-flex justify-content-center flex-row bd-highlight mb-3">
            　　<div class="p-2 bd-highlight"><%= @post.created_at.to_s(:datetime_jp) %></div>

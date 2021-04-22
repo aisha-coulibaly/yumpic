@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <% if logged_in? %>
   <div class="container">
     <a class="navbar-brand " href="/">Yumpic</a>
@@ -10,7 +10,7 @@
       <ul class="navbar-nav mr-auto">　
         
         <li class="nav-item">
-          <a><%= link_to user_path(current_user), class: 'nav-link', method: :get do %>Home<% end %></a>
+          <a><%= link_to users_path, class: 'nav-link', method: :get do %>ユーザ一覧<% end %></a>
         </li>
         <li class="nav-item">
           <a><%= link_to new_post_path, class: 'nav-link', method: :get do %>新規投稿<% end %></a>
@@ -24,7 +24,7 @@
          </a>
          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
            <a class=""><%= link_to edit_user_path(current_user), class: 'dropdown-item', method: :get do %>アカウント編集<% end %></a>
-           <a><%= link_to users_path, class: 'dropdown-item', method: :get do %>ユーザ一覧<% end %></a>
+           <a><%= link_to user_path(current_user), class: 'dropdown-item', method: :get do %>Home<% end %></a>
            <div class="dropdown-divider"></div>
            <a><%= link_to logout_path, class: 'dropdown-item', method: :delete do %>ログアウト<% end %></a>
         </li>
@@ -35,7 +35,6 @@
 
   
     <% else %>
-         
       <div class="container">
         <a class="navbar-brand " href="/">Yumpic</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
