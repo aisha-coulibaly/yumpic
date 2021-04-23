@@ -23,8 +23,8 @@
            アカウント
          </a>
          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-           <a class=""><%= link_to edit_user_path(current_user), class: 'dropdown-item', method: :get do %>アカウント編集<% end %></a>
            <a><%= link_to user_path(current_user), class: 'dropdown-item', method: :get do %>Home<% end %></a>
+           <a class=""><%= link_to edit_user_path(current_user), class: 'dropdown-item', method: :get do %>アカウント編集<% end %></a>
            <div class="dropdown-divider"></div>
            <a><%= link_to logout_path, class: 'dropdown-item', method: :delete do %>ログアウト<% end %></a>
         </li>

@@ -10,6 +10,5 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
-  #before_action :authenticate_user!
   
 end

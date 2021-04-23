@@ -10,11 +10,9 @@
           <%= render 'posts/tag_list', tag_list: @post.tag_list %>
           
           <% if current_user == @post.user %>
-            <%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to "×", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
           <% end %><br>
-          
               <%= text_url_to_link(h(@post.url)).html_safe %>
-         
           
           
           
