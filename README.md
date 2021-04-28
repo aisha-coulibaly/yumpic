@@ -1,9 +1,10 @@
 # Yumpic
 食事の写真をURLとタグを付けて投稿ができるアプリです。<br>
-お店で食べたものならお店のURLと、家で作ったものならレシピのURLと投稿するなど、記録しておきたいURLがあれば入力してください。<br>
+お店で食べたものならお店のURLと、家で作ったものならレシピのURLと投稿するなど、記録しておきたいURLがあれば入力できます。<br>
 レスポンシブ対応してるのでスマホからもお使いいただけます。
 ![top](https://user-images.githubusercontent.com/67138609/115830131-d4d20180-a44a-11eb-9b3f-b6a8bd9db83c.png)
-![sm top](https://user-images.githubusercontent.com/67138609/115830120-d1d71100-a44a-11eb-91eb-87ee87423cfd.png)
+![user-top](https://user-images.githubusercontent.com/67138609/115835680-81af7d00-a451-11eb-9317-df52acf851e1.jpeg)
+![sm top](https://user-images.githubusercontent.com/67138609/115835692-85db9a80-a451-11eb-9620-048c7400e3e7.jpeg)
 
 
 # URL
